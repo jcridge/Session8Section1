@@ -9,10 +9,6 @@ $(document).on('pageinit', function() {
 	
 });
 
-function slideOn(){
-
-}
-
 //Call this function when you want to get the current position
 function getPosition() {
 	//change time box to show updated message
