@@ -16,7 +16,7 @@
         WBS Computing
     </author>
 
-    <preference name="permissions"                value="none"/>   
-	<gap:plugin name="org.apache.cordova.geolocation" version="0.3.2" />
+    <!--<preference name="permissions"                value="none"/>   -->
+	<gap:plugin name="org.apache.cordova.geolocation"/>
 	<access origin="*"/>
 </widget>
