@@ -19,6 +19,11 @@ function getPosition() {
 	//instruct location service to get position with appropriate callbacks
 	var watchID = navigator.geolocation.watchPosition(successPosition,  failPosition, locationOptions);
 	
+	var locationOptions = {
+		maximumAge: 10000,
+		timeout: 6000,
+		enableHighAccuracy: true
+};
 //called when the position is successfully determined
 function successPosition(position) {
 	
@@ -52,13 +57,5 @@ function failPosition(error) {
 	$('#time').val("Error getting data: " + error);
 	$('#latitude').val("Error getting data: " + error);
 	$('#longitude').val("Error getting data: " + error);
-}
-
-function locationOptions(){
-	var locationOptions = {
-		maximumAge: 10000,
-		timeout: 6000,
-		enableHighAccuracy: true
-	};
 }
 };
