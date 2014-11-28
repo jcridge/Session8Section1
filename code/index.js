@@ -19,11 +19,11 @@ function getPosition() {
 	//instruct location service to get position with appropriate callbacks
 	var watchID = navigator.geolocation.watchPosition(successPosition,  failPosition, locationOptions);
 	
-	var locationOptions = {
+	/*var locationOptions = {
 		maximumAge: 10000,
 		timeout: 6000,
 		enableHighAccuracy: true
-};
+};*/
 //called when the position is successfully determined
 function successPosition(position) {
 	
