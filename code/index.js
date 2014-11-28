@@ -9,6 +9,9 @@ $(document).on('pageinit', function() {
 	
 });
 
+function slideOn(){
+
+}
 
 //Call this function when you want to get the current position
 function getPosition() {
@@ -18,10 +21,8 @@ function getPosition() {
 	$('#longitude').val("Getting data...");
 
 	//instruct location service to get position with appropriate callbacks
-	navigator.geolocation.getCurrentPosition(successPosition, failPosition);
-}
-
-
+	var watchID = navigator.geolocation.watchPosition(successPosition,  failPosition, locationOptions);
+	
 //called when the position is successfully determined
 function successPosition(position) {
 	
@@ -46,6 +47,7 @@ function successPosition(position) {
 	$('#heading').val(heading);
 	$('#speed').val(speed);
 	//alert("Your altitude is: " + altitude + "Your Altitude Accuracy is: " + altac + "Your heading is: " + heading + "Your speed is: " + speed);
+	
 }
 
 //called if the position is not obtained correctly
@@ -55,3 +57,12 @@ function failPosition(error) {
 	$('#latitude').val("Error getting data: " + error);
 	$('#longitude').val("Error getting data: " + error);
 }
+
+function locationOptions(){
+	var locationOptions = {
+		maximumAge: 10000,
+		timeout: 6000,
+		enableHighAccuracy: true
+	};
+}
+};
