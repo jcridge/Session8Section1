@@ -11,12 +11,12 @@ $(document).on('pageinit', function() {
 
 
 //Call this function when you want to get the current position
-function getPosition() 
+function getPosition() {
 	//change time box to show updated message
 	$('#time').val("Getting data...");
 	$('#latitude').val("Getting data...");
 	$('#longitude').val("Getting data...");
-	
+
 	//instruct location service to get position with appropriate callbacks
 	navigator.geolocation.getCurrentPosition(successPosition, failPosition);
 }
@@ -28,16 +28,20 @@ function successPosition(position) {
 	//You can find out more details about what the position obejct contains here:
 	// http://www.w3schools.com/html/html5_geolocation.asp
 	
-
 	//lets get some stuff out of the position object
 	var time = position.timestamp;
 	var latitude = position.coords.latitude;
 	var longitude = position.coords.longitude;
+	var altitude = position.coords.altitude;
+	var altac = position.coords.altitudeAccuracy;
+	var heading = position.coords.heading;
+	var speed = position.coords.speed;	
 	
 	//OK. Now we want to update the display with the correct values
 	$('#time').val("Recieved data at " + time);
-	$('#latitude').val(latitude);
-	$('longitude').val(longitude);
+	$('#lattext').val(latitude);
+	$('#longtext').val(longitude);
+	alert("Your altitude is: " + altitude + "Your Altitude Accuracy is: " + altac + "Your heading is: " + heading + "Your speed is: " + speed);
 }
 
 //called if the position is not obtained correctly
