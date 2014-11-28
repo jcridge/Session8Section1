@@ -41,7 +41,11 @@ function successPosition(position) {
 	$('#time').val("Recieved data at " + time);
 	$('#lattext').val(latitude);
 	$('#longtext').val(longitude);
-	alert("Your altitude is: " + altitude + "Your Altitude Accuracy is: " + altac + "Your heading is: " + heading + "Your speed is: " + speed);
+	$('#altitude').val(altitude);
+	$('#altacc').val(altac);
+	$('#heading').val(heading);
+	$('#speed').val(speed);
+	//alert("Your altitude is: " + altitude + "Your Altitude Accuracy is: " + altac + "Your heading is: " + heading + "Your speed is: " + speed);
 }
 
 //called if the position is not obtained correctly
